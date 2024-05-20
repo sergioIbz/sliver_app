@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:sliver_app/loading_widget.dart';
 
 class LoadingAnimated extends StatefulWidget {
-  final Size size;
 
-  const LoadingAnimated({
+  final Widget child;
+  const LoadingAnimated(this.child,{
     super.key,
-    required this.size,
+    
   });
 
   @override
@@ -22,7 +22,7 @@ class _LoadingAnimatedState extends State<LoadingAnimated>
       ..repeat(
         min: -0.5,
         max: 1.5,
-        period: const Duration(milliseconds: 1300),
+        period: const Duration(milliseconds: 2300),
       );
     super.initState();
   }
@@ -51,9 +51,7 @@ class _LoadingAnimatedState extends State<LoadingAnimated>
           ).createShader(
             bounds,
           ),
-          child: LoadingWidget(
-            width: widget.size.width,
-          ),
+          child:widget.child,
         );
       },
     );
@@ -65,6 +63,6 @@ class _GradientTransform extends GradientTransform {
   const _GradientTransform(this.percent);
   @override
   Matrix4? transform(Rect bounds, {TextDirection? textDirection}) {
-    return Matrix4.translationValues(bounds.width *percent, 0, 0);
+    return Matrix4.translationValues(bounds.width * percent, 0, 0);
   }
 }

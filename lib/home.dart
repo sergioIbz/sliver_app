@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sliver_app/loading_animated.dart';
+import 'package:sliver_app/loading_widget.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -9,11 +10,16 @@ class Home extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.black,
-      body: ListView(
-        children: List.generate(
-          10,
-          (index) => LoadingAnimated(size: size),
-        ),
+      body: ListView.builder(
+        itemCount: 20,
+        cacheExtent: 1500,
+        itemBuilder: (BuildContext context, int index) {
+          return LoadingAnimated(
+            LoadingWidget(
+              width: size.width,
+            ),
+          );
+        },
       ),
     );
   }
