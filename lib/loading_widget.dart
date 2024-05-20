@@ -8,7 +8,7 @@ class LoadingWidget extends StatelessWidget {
     super.key,
     required this.width,
     this.color = const Color(0xFFB9B9BC),
-  }) : height = width * 0.2;
+  }) : height = width * 0.14;
 
   @override
   Widget build(BuildContext context) {
