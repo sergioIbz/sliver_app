@@ -1,4 +1,4 @@
-import 'package:flutter/foundation.dart';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sliver_app/loading_animated.dart';
@@ -16,7 +16,7 @@ class Home extends StatelessWidget {
     double minHeight = size.height * 0.23;
     double porcentaje =
         Provider.of<SliderProvider>(context).currentSlide / maxHeight;
-    print(porcentaje);
+  
 
     return Scaffold(
       backgroundColor: const Color(0xffE8E8ED),
