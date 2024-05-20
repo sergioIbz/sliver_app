@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sliver_app/loading_widget.dart';
 
 class LoadingAnimated extends StatefulWidget {
 
